@@ -1,11 +1,11 @@
-SRC=$(shell find . -name '*.c')
+SRC=$(shell find . -name '*.c' -and -not -name 'common.c')
 TARGETS=$(SRC:%.c=%)
 
 .PHONY: all
 all: $(TARGETS)
 
-%: %.c
-	$(CC) $(CFLAGS) -o $@ $<
+%: %.c common.c
+	$(CC) $(CFLAGS) -o $@ $?
 
 .PHONY: clean
 clean:

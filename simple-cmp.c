@@ -2,11 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-int boom() {
-  int *p = (int *)0x1;
-  *p = 0xDEADBEEF;
-  return *p;
-}
+#include  "common.h"
 
 static int validate_data(uint8_t *buffer, size_t size) {
   if (size < 50) {
