@@ -18,7 +18,7 @@ struct Image {
   char data[10];
 };
 
-int ProcessImage(char *filename) {
+void ProcessImage(char *filename) {
 
   FILE *fp;
   char ch;
